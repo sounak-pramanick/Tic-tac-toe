@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+
+#gameboard {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square:nth-of-type(1),
+.square:nth-of-type(2),
+.square:nth-of-type(3) {
+    border-top: none;
+}
+
+.square:nth-of-type(1),
+.square:nth-of-type(4),
+.square:nth-of-type(7) {
+    border-left: none;
+}
+
+.square:nth-of-type(3n) {
+    border-right: none;
+}
+
+.square:nth-of-type(7),
+.square:nth-of-type(8),
+.square:nth-of-type(9) {
+    border-bottom: none;
+}
+
+.circle {
+    width: 90px;
+    height: 90px;
+    border: 15px solid #add8e6;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.cross {
+    width: 90px;
+    height: 90px;
+    position: relative;
+}
+
+.cross::before, .cross::after {
+    content: "";
+    position: absolute;
+    background-color: #90ee90;
+    transform: rotate(45deg);
+}
+
+.cross::before {
+    left: 50%;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+}
+
+.cross::after {
+    top: 50%;
+    height: 30%;
+    margin-top: -15%;
+    width: 100%;
+}
+
+#info {
+    margin: 1em 0;
+    font-size: 1.8em;
+    background-color: #FCFCFD;
+    color: #36395A;    
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #36395A;
+}
+
+h1 {
+    margin-bottom: 2.1em;
+    letter-spacing: 3px;
+    color: #36395A;
+}
+
+#resetBtn {
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  color: #36395A;
+  cursor: pointer;
+  height: 48px;
+  padding: 0 16px;
+  transition: box-shadow .15s,transform .15s;
+  font-size: 18px;
+}
+
+#resetBtn:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+#resetBtn:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#resetBtn:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
